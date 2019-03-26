@@ -1,3 +1,91 @@
 body{
-  background-color: turquoise;
+  background-color: #FFE66D !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Baloo Chettan', cursive;
 }
+
+.dimension-input-container{
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  height: 60px;
+  background-color: #3BCEAC;
+  border-radius: 10px;
+  margin-top: 30px;
+  flex-direction: row;
+  padding: 5px 15px 5px 15px;
+}
+
+.input{
+  border-radius: 10px;
+  background-color: rgba(255,255,255,.5);
+  border: 0;
+  padding-right: 10px;
+  height: 70%;
+  width: 5%;
+  font-size: 23px;
+  text-align: right;
+  margin: auto 10px auto 10px;
+  font-family: 'Baloo Chettan', cursive;
+  color: mediumvioletred;
+}
+
+.input-btn{
+  font-size: 23px;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: 0;
+  color: #333;
+  margin: auto 5px auto 5px;
+  background-color: #FE5F55;
+}
+
+
+.input-btn:disabled {
+    background-color: chocolate;
+    color: #d6d6d6;
+    background-color: #868686;
+}
+
+.input-btn:hover:enabled{
+  background-color: #FF8980;
+}
+
+.input-btn:active:enabled{
+  background-color: #E25046;
+}
+
+.input:hover, .input:focus, .input-btn:hover, .input-btn:focus{
+  outline: 0;
+}
+
+.input-label{
+  font-size: 25px;
+  margin: auto 0 auto 0;
+  color: #333;
+}
+
+.values-input-container{
+  display: flex;
+  width: 90%;
+  height: 500px;
+  background-color: rgba(0,0,0,5%);
+  border-radius: 10px;
+  margin-top: 15px;
+  padding: 5px 15px 5px 15px;
+}
+
+.child{
+  width: 45%;
+  height: 60%;
+  background-color: rgba(0,0,0,5%);
+  border-radius: 10px;
+  margin-top: 15px;
+  padding: 5px 15px 5px 15px;
+  margin: 35px auto 0 auto;
+}
+
+/*B892FF PALE VIOLET*/
