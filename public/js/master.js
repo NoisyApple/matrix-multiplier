@@ -1,3 +1,17 @@
+var Am, AnBm, Bn;
+
+var amat = new Array(3);
+
+for (var i = 0; i < amat.length; i++) {
+  amat[i] = new Array(2);
+}
+
+for (var i = 0; i < 3; i++) {
+  for (var j = 0; j < 2; j++) {
+    amat[i][j] = "15";
+  }
+}
+
 $('.dimension-input-container').on('keypress', '.input',(e) => {
   numberFilter(e, 10);
 });
@@ -11,17 +25,16 @@ $('.dimension-input-container').on('input', '#matAn, #matBm',(e) => {
 });
 
 $('.btn-matGen').on('click', () => {
-  console.log("GENERATE MATRIX!");
-  var Am = $('#matAm').val();
-  var AmBn = $('#matAn').val();
-  var Bn = $('#matBn').val();
+  generateMatrix();
+});
 
-  console.log(Am, AmBn, Bn);
+$('.btn-result').on('click', () =>{
+  var result = calculateResult();
+  //showResult(result);
+});
 
-  var matAHtml;
-  var matBHtml;
-
-
+$('.matA, .matB').on('input', '.matValue', () =>{
+  checkResultButton();
 });
 
 $('.btn-reset').on('click', () => {
@@ -84,4 +97,106 @@ function completeANBM(e){
   } else {
     $('#matAn').val(e.target.value);
   }
+}
+
+//This function generates the HTML code for each matrix with its correspondent dimensions.
+function generateMatrix(){
+  $('.btn-result').attr('disabled', 'disabled');
+  $('.values-input-container').css('display','flex');
+
+  Am = $('#matAm').val();
+  AnBm = $('#matAn').val();
+  Bn = $('#matBn').val();
+
+  var matAHtml = '';
+  var matBHtml = '';
+
+  for(var i = 0; i < Am; i++){
+    for(var j = 0; j < AnBm; j++){
+      matAHtml += '<input type="text" id="elementA' + (i+1) + (j+1) + '" class="matValue input">';
+    }
+    matAHtml += '<div></div>';
+  }
+
+  for(var i = 0; i < AnBm; i++){
+    for(var j = 0; j < Bn; j++){
+      matBHtml += '<input type="text" id="elementB' + (i+1) + (j+1) + '" class="matValue input">';
+    }
+    matBHtml += '<div></div>';
+  }
+
+  $('.matA').html(matAHtml);
+  $('.matB').html(matBHtml);
+}
+
+//Looks for unfilled input elements inside each matrix, if all are filled
+//the result button will be enabled.
+function checkResultButton(){
+  var allFilled = true;
+
+  $('.matValue').each((index, element) => {
+
+    if (element.value.length == 0) {
+      allFilled = false;
+      return false;
+    }
+  });
+
+  if (allFilled) {
+    $('.btn-result').removeAttr('disabled');
+  } else {
+    $('.btn-result').attr('disabled', 'disabled');
+  }
+}
+
+function calculateResult(){
+
+  var arrayA;
+  var arrayB;
+  var arrayResult;
+
+  arrayA = new Array(Am);
+
+  //BIDIMENSIONAL ARRAY OF MAT-A CREATION
+  for (var i = 0; i < Am; i++) {
+    arrayA[i] = new Array(AnBm);
+  }
+
+  //FILLING OF MAT-A BIDIMENSION ARRAY
+  for (var i = 0; i < Am; i++) {
+    for (var j = 0; j < AnBm; j++) {
+      arrayA[i][j] = $('#elementA' + (i+1) + (j+1)).val();
+    }
+  }
+
+  console.table(arrayA);
+
+  arrayB = new Array(AnBm);
+
+  //BIDIMENSIONAL ARRAY OF MAT-B CREATION
+  for (var i = 0; i < AnBm; i++) {
+    arrayB[i] = new Array(Bn);
+  }
+
+  //FILLING OF MAT-B BIDIMENSION ARRAY
+  for (var i = 0; i < AnBm; i++) {
+    for (var j = 0; j < Bn; j++) {
+      arrayB[i][j] = $('#elementB' + (i+1) + (j+1)).val();
+    }
+  }
+
+  console.table(arrayB);
+
+  // arrayResult = new Array(Am);
+  //
+  // for (var i = 0; i < Am; i++) {
+  //   arrayResult[i] = new Array(Bn);
+  // }
+
+  // for (var i = 0; i < Bn; i++) {
+  //   for (var j = 0; j < Am; j++) {
+  //     arrayResult[i][j] = "Hey!";
+  //   }
+  // }
+
 }

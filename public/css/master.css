@@ -79,9 +79,9 @@ body{
 }
 
 .values-input-container{
-  display: flex;
+  /* display: flex; */
   width: 90%;
-  height: content;
+  display: none;
   /* background-color: rgba(0,0,0,5%); */
   border-radius: 10px;
   margin-top: 15px;
