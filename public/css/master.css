@@ -112,14 +112,10 @@ body{
 
 .matA, .matB, .matR{
   display: inline-block;
-  background-color: mediumvioletred;
+  background-color: #B892FF;
   border-radius: 10px;
   padding: 10px;
   font-size: 0;
-}
-
-.matValue.input{
-  color: #673AB7;
 }
 
 .matA .input, .matB .input, .matR .input{
