@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan" rel="stylesheet">
+  <link rel="stylesheet" href="./css/master.css">
+  <title>Calculadora de Matrices</title>
+</head>
+<body>
+  <div class="dimension-input-container">
+    <div style="display: contents" class="inputs-ctnr">
+      <span class="label">Matriz A: </span>
+      <input type="text" id="matAm" class="input" maxlength="2"></input>
+      <span class="label"> × </span>
+      <input type="text" id="matAn" class="input" maxlength="2"></input>
+    </div>
+    <div style="display: contents" class="inputs-ctnr">
+      <span class='label' style='margin-left: 20px'>Matriz B: </span>
+      <input type="text" id="matBm" class="input" maxlength="2"></input>
+      <span class="label"> × </span>
+      <input type="text" id="matBn" class="input" maxlength="2"></input>
+    </div>
+    <div style="display: contents" class="inputs-ctnr">
+      <button class="input-btn btn-matGen" style="margin-left: 20px" type="button" name="button" disabled><i class="fas fa-table"></i></button>
+      <button class="input-btn btn-result" type="button" name="button" disabled><i class="fas fa-equals"></i></button>
+      <button class="input-btn btn-reset" type="button" name="button" disabled><i class="fas fa-trash"></i></button>
+      <button class="input-btn btn-op"  style="margin-left: 20px"type="button" name="button"><i class="fas fa-times"></i></button>
+    </div>
+  </div>
+
+  <div class="info-container">
+    <span>INSTRUCCIONES:</span>
+    <ol class="o-list">
+      <li>Haz click en el boton verde para alternar entre las operaciones: <button class="input-btn inst-btn" type="button" name="button" disabled><i class="fas fa-times"></i></button>,<button class="input-btn inst-btn" type="button" name="button" disabled><i class="fas fa-plus"></i></button>,<button class="input-btn inst-btn" type="button" name="button" disabled><i class="fas fa-minus"></i></button>.
+        <ul class="u-list">
+        <li><span style="font-weight: bold">Multiplicacion:</span> Ingresa las dimensiones (m×n) de las matrices A y B tomando en cuenta que An y Bm deben ser iguales.</li>
+        <li><span style="font-weight: bold">Suma y Resta:</span> Ingresa las dimensiones (m×n) de las matrices A y B tomando en cuenta que las dimensiones seran las mismas.</li>
+        </ul>
+      </li>
+      <li>Una vez que las dimensiones se ingresaron se habilitara el boton<button class="input-btn inst-btn" type="button" name="button" disabled><i class="fas fa-table"></i></button> y al hacer click generara las matrices correspondientes.</li>
+      <li>Ingresa los valores dentro de las matrices y se habilitara el boton<button class="input-btn inst-btn" type="button" name="button" disabled><i class="fas fa-equals"></i></button>, al hacer click en el nos dara la matriz resultante.</li>
+      <li>El boton<button class="input-btn inst-btn" type="button" name="button" disabled><i class="fas fa-trash"></i></button> se habilitara cuando haya datos ingresados en los campos de dimensionamiento de las matrices, al hacer click reiniciara los campos y mostrara estas instrucciones nuevamente. Lo mismo sucedera con el boton de operaciones.</li>
+    </ol>
+  </div>
+
+  <div class="values-input-container">
+    <span class="label label-inputmats" style="margin-top: 0">MATRICES DE ENTRADA</span>
+    <div class="input-matrix-container">
+      <div class="matrix-container">
+        <div class="matA">
+          <!-- MATRIX A HTML IS INSERTED HERE -->
+        </div>
+        <span class="label">A</span>
+      </div>
+      <span class="label label-op" style="font-size: 60px">×</span>
+      <div class="matrix-container">
+        <div class="matB">
+          <!-- MATRIX B HTML IS INSERTED HERE -->
+        </div>
+        <span class="label">B</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="results-container">
+    <div class="separator"></div>
+    <span class="label label-result">RESULTADOS</span>
+    <div class="matrix-container">
+      <div class="matR">
+        <!-- MATRIX R HTML IS INSERTED HERE -->
+      </div>
+    </div>
+  </div>
+
+  <footer style="margin-top: 30px;">Designed and built by <a href="https://github.com/NoisyApple" target="_blank">Leonel Aguirre</a>, 2019.</footer>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="./js/master.js" type="text/javascript"></script>
+</body>
+</html>
